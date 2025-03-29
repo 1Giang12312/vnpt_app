@@ -1,0 +1,4 @@
+-keep class com.google.android.gms.** { *; }
+-keep class com.google.android.libraries.places.** { *; }
+-keep class androidx.core.location.** { *; }
+-keep class android.location.Location { *; }
