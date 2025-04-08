@@ -5,10 +5,12 @@ import 'package:vnptapp/Variable/Constant.dart';
 import 'package:vnptapp/screen/Main_Homepage/Main_Homepage_Route.dart';
 import 'dart:convert';
 
-Future<String> saveData(String long, String lat) async {
+Future<String> saveData_LongLat(String long, String lat) async {
   try {
     // print(ApiEndPoint.baseUrl );
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    String user_one =prefs.getString('user_one').toString();
+    print(user_one);
 
     String url = Main_Homepage_Route.saveLocate;
     http.Response response = await http.post(Uri.parse(url),
@@ -18,14 +20,14 @@ Future<String> saveData(String long, String lat) async {
         body: jsonEncode(<String, String>{
           'latitude': lat,
           'longitude':long,
-          'user_one': prefs.getString('user_one').toString()
+          'user_one': user_one
         }));
     if (response.statusCode == 200) {
 
     }
     return response.statusCode.toString();
   } catch (e) {
-    throw Exception('Lỗi khi đăng nhập vui lòng thử lại');
+    throw Exception('Lỗi khi save vị trí');
   }
 }
 

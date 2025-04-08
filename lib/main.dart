@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:month_year_picker/month_year_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,7 +28,7 @@ class MyHttpOverrides extends HttpOverrides {
 void main() async {
   HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
-  
+  FlutterForegroundTask.initCommunicationPort();
 
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -44,6 +45,7 @@ void main() async {
   // print(shared_preferences.getBool('darklightmode').toString());
   WidgetsFlutterBinding.ensureInitialized();
   runApp(ProviderScope(child: MyApp(prefs: prefs)));
+ 
   //   MaterialApp(
   //       theme: ThemeData(
   //           colorSchemeSeed: const Color(0x00005aab), useMaterial3: true),

@@ -9,7 +9,7 @@ import 'package:vnptapp/Components/Custom_Text.dart';
 import 'package:vnptapp/Components/Custom_ShowDialog.dart';
 import 'package:vnptapp/Components/LoadingScreen.dart';
 import 'package:vnptapp/Variable/Constant.dart';
-import 'package:vnptapp/screen/Main_Homepage/Main_Homepage_MainPage.dart';
+import 'package:vnptapp/screen/Main_Homepage/Main_HomePage.dart';
 import 'package:vnptapp/screen/homepage/HomePage_MainPage.dart';
 import 'package:vnptapp/screen/login_One/LoginOne_Logic.dart';
 import 'package:vnptapp/screen/login_One_OTP/Login_One_OTP_MainPage.dart';
@@ -47,7 +47,7 @@ class _LoginOne_MainPageState extends State<LoginOne_MainPage> {
           });
           if (login == '200') {
                 // pageTransitionRemoveAll(context, Login_One_OTP_MainPage());
-                pageTransitionRemoveAll(context, Main_Homepage_MainPage());
+                pageTransitionRemoveAll(context, Main_HomePage());
 
           } else {
             ShowDialog('Lỗi', 'Vui lòng kiểm tra lại tài khoản, mật khẩu và thử lại trong ít phút!', context);
@@ -62,7 +62,7 @@ class _LoginOne_MainPageState extends State<LoginOne_MainPage> {
     if(mounted){
       Future.delayed(Duration.zero, () {
     setState(() {
-        pageTransitionRemoveAll(context, Main_Homepage_MainPage());
+        pageTransitionRemoveAll(context, Main_HomePage());
 
     });
   });

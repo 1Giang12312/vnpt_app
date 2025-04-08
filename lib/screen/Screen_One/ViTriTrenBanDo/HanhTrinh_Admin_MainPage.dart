@@ -6,7 +6,7 @@ import 'package:vnptapp/Components/Custom_Page_Transition.dart';
 import 'package:vnptapp/Components/Custom_ShowDialog.dart';
 import 'package:vnptapp/Components/LoadingScreen.dart';
 import 'package:vnptapp/Variable/Constant.dart';
-import 'package:vnptapp/screen/Main_Homepage/Main_Homepage_MainPage.dart';
+import 'package:vnptapp/screen/Main_Homepage/Main_HomePage.dart';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/HanhTrinh_Detail_MainPage.dart';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/HanhTrinh_Logic.dart'
     as HanhTrinh_Logic;
@@ -38,7 +38,7 @@ class _HanhTrinh_Admin_MainPageState extends State<HanhTrinh_Admin_MainPage> {
       firstDate: DateTime(2020),
       lastDate: DateTime(2030),
     );
-    if (picked != null) {
+    if (picked != null && mounted) {
       setState(() {
         controller.text = picked.toString().split(' ')[0]; // Format YYYY-MM-DD
       });
@@ -276,7 +276,7 @@ Future<void> LoadDS_NV() async {
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => Main_Homepage_MainPage()),
+              MaterialPageRoute(builder: (context) => Main_HomePage()),
               (route) => false,
             );
           },

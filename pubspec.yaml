@@ -84,6 +84,7 @@ dependencies:
   sticky_headers: ^0.3.0+2
   # flutter_background_service: ^5.1.0  # Đảm bảo phiên bản khớp
   flutter_launcher_icons: ^0.14.3
+  flutter_foreground_task: ^8.17.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

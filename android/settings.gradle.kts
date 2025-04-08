@@ -23,3 +23,5 @@ plugins {
 }
 
 include(":app")
+include(":flutter_background_geolocation")
+include(":background_fetch")

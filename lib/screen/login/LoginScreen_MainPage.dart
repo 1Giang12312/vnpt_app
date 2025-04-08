@@ -15,7 +15,7 @@ import 'package:vnptapp/GlobalFunction/InternetChecker.dart';
 import 'package:vnptapp/Models/NhanVien.dart';
 import 'package:vnptapp/Models/SubModel/subModel_DemDangNhap.dart';
 import 'package:vnptapp/Variable/Constant.dart';
-import 'package:vnptapp/screen/Main_Homepage/Main_Homepage_MainPage.dart';
+import 'package:vnptapp/screen/Main_Homepage/Main_HomePage.dart';
 import 'package:vnptapp/screen/ODPScreen/ODPScreen_MainPage.dart';
 import 'package:vnptapp/screen/homepage/HomePage_MainPage.dart';
 import 'package:vnptapp/screen/login/LoginScreen_Logic.dart';
@@ -294,7 +294,7 @@ class _LoginScreen_MainPageState extends State<LoginScreen_MainPage> {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Main_Homepage_MainPage()),
+                        builder: (context) => Main_HomePage()),
                     (route) => false,
                   );
                 },
