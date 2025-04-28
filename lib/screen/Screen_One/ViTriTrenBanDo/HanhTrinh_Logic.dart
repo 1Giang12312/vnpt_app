@@ -8,11 +8,6 @@ import 'dart:convert';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/HanhTrinh_Modal.dart';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/HanhTrinh_Route.dart';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/NhanVien_SoKM_Model.dart';
-
-
-
-
-
 Future<String> saveData(String long, String lat) async {
   
   try {
@@ -67,7 +62,6 @@ Future<List<LocationData>> LoadDataHanhTrinh(String ngay_bd,String ngay_kt,Strin
     throw Exception('Không thể load');
   }
 }
-
 Future<List<NhanVien_SoKM_Model>> LoadDS_NV_SoKM(String ngay_bd,String ngay_kt) async {
   http.Response response;
   String url =  HanhTrinh_Route.get_ds_NV_SoKM;
@@ -97,10 +91,6 @@ Future<List<NhanVien_SoKM_Model>> LoadDS_NV_SoKM(String ngay_bd,String ngay_kt) 
     throw Exception('Không thể load');
   }
 }
-
-
-
-
 Future<List<NhanVien_SoKM_Model>> LoadDS_NV_Ngay_SoKM(String ngay_bd,String ngay_kt) async {
   http.Response response;
   String url =  HanhTrinh_Route.get_ds_NV_Ngay_SoKM;

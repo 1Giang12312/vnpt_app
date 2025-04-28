@@ -8,6 +8,7 @@ import 'package:vnptapp/Models/NhanVien.dart';
 import 'package:vnptapp/Variable/Constant.dart';
 import 'package:vnptapp/screen/Drawer/Drawer_Logic.dart';
 import 'package:vnptapp/screen/Drawer/profile/ProfileScreen_MainPage.dart';
+import 'package:vnptapp/screen/Screen_One/ViTriCuoiCungTrenBanDo/ViTri_CuoiCung_MainPage.dart';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/HanhTrinh_Admin_MainPage.dart';
 import 'package:vnptapp/screen/Screen_One/ViTriTrenBanDo/HanhTrinh_User_MainPage.dart';
 import 'package:vnptapp/screen/login/LoginScreen_MainPage.dart';
@@ -84,7 +85,16 @@ class _Drawer_One_MainPageState extends State<Drawer_One_MainPage> {
                 }
               },
             ),
+            if (shared_preferences.getString('role') == 'Admin')
+              ListTile(
+                title: Text_medium_dark(title: 'Theo dõi vị trí'),
+                onTap: () async {
+                  pageTransitionRemoveAll(
+                    context,ViTri_CuoiCung_MainPage()
 
+                  );
+                },
+              ),
             ListTile(
               title: Text_medium_dark(title: 'App BSC'),
               onTap: () async {
@@ -98,6 +108,7 @@ class _Drawer_One_MainPageState extends State<Drawer_One_MainPage> {
               title: Text_medium_dark(title: 'Đăng xuất'),
               onTap: () async {
                 resetUser();
+                
                 pageTransitionRemoveAll(
                   context,
                   LoginOne_MainPage(thongBao: ''),

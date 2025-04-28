@@ -213,7 +213,9 @@ class _HanhTrinh_Detail_MainPageState extends State<HanhTrinh_Detail_MainPage> {
           children: [
        // Danh sách kết quả
             Expanded(
-              child: FlutterMap(
+              child:
+              
+               FlutterMap(
                 mapController: mapController,
                 options: MapOptions(
                   center:
@@ -263,8 +265,8 @@ class _HanhTrinh_Detail_MainPageState extends State<HanhTrinh_Detail_MainPage> {
                   ),
                 ],
               ),
+            
             ),
-       
           ],
         ),
       ),
